@@ -1,0 +1,75 @@
+/* Always write @font-face rule at the top of style.css */
+@font-face {
+    font-family: "deepufont";
+    src: url("../fonts/alex1.ttf") format("truetype");
+}
+
+body {
+    /* Margin: T/R/B/L  */
+    margin: 0px;
+
+    /* Margin: T/B L/R */
+    /* margin: 0px 10px; */
+}
+
+
+/* Combination Selector when two or more element separate by comman */
+header,
+footer {
+    width: 100%;
+    height: 100px;
+    border: 1px dashed red;
+    font-family: deepufont;
+    font-size: larger;
+}
+
+main {
+    height: 1200px;
+    border: 1px dashed red;
+}
+
+/* Attribute Selector */
+aside[data-leftaside="left"] {
+    width: 25%;
+    border: 2px dashed yellow;
+    float: left;
+}
+
+section[data-section="mysection"] {
+    width: 50%;
+    border: 2px dashed blue;
+    float: left;
+}
+
+aside[data-rightaside="right"] {
+    width: 24%;
+    border: 2px dashed orange;
+    float: left;
+}
+
+/* Over-ride above footer css rule as known as Casacading */
+footer {
+    height: 200px;
+}
+
+/* Always write @media queries rule at the end of style.css */
+
+/* @media not|only mediatype and (mediafeature and|or|not mediafeature) {
+    CSS-Code;
+} */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: red;
+    }
+
+    aside[data-rightaside="right"] {
+        width: 23%;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    body {
+        background-color: green;
+    }
+}
